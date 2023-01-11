@@ -1,0 +1,2 @@
+AkademiECommerce.Services.Catalog
+AkademiECommerce.Shared
