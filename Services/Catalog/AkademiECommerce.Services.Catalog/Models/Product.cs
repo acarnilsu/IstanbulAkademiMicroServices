@@ -13,5 +13,11 @@ namespace AkademiECommerce.Services.Catalog.Models
         public decimal Price { get; set; }
         public string Image { get; set; }
         public int Stock { get; set; }
+
+        [BsonRepresentation(BsonType.ObjectId)]
+        public string CategoryID { get; set; }
+
+        [BsonIgnore]
+        public Category Category { get; set; }
     }
 }
