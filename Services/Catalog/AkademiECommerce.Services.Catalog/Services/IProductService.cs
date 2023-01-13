@@ -10,7 +10,7 @@ namespace AkademiECommerce.Services.Catalog.Services
         Task<ResponseDto<List<ProductDto>>> GetAllAsync();
         Task<ResponseDto<ProductDto>> CreateAsync(ProductCreateDto productCreateDto);
         Task<ResponseDto<ProductDto>> GetByIdAsync(string id);
-        Task<ResponseDto<ProductDto>> DeleteAsync(string id);
-        Task<ResponseDto<ProductDto>> UpdateAsync(ProductCreateDto productCreateDto);
+        Task<ResponseDto<NoContent>> DeleteAsync(string id);
+        Task<ResponseDto<NoContent>> UpdateAsync(ProductUpdateDto productUpdateDto);
     }
 }

@@ -1,3 +1,4 @@
+using AkademiECommerce.Services.Catalog.Services;
 using AkademiECommerce.Services.Catalog.Settings;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -28,6 +29,8 @@ namespace AkademiECommerce.Services.Catalog
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddAutoMapper(typeof(Startup));
+            services.AddScoped<ICategoryService, CategoryService>();
+            services.AddScoped<IProductService, ProductService>();
             services.AddControllers();
 
             services.Configure<IDatabaseSettings>(Configuration.GetSection("DatabaseSettings"));
