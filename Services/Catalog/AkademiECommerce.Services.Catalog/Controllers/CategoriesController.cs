@@ -30,5 +30,11 @@ namespace AkademiECommerce.Services.Catalog.Controllers
             var response = await _categoryService.CreateAsync(categoryDto);
             return CreateActionResultInstance(response);
         }
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetByID(string id)
+        {
+            var response = await _categoryService.GetByIdAsync(id);
+            return CreateActionResultInstance(response);
+        }
     }
 }

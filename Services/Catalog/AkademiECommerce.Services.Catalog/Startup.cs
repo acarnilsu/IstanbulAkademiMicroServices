@@ -33,7 +33,7 @@ namespace AkademiECommerce.Services.Catalog
             services.AddScoped<IProductService, ProductService>();
             services.AddControllers();
 
-            services.Configure<IDatabaseSettings>(Configuration.GetSection("DatabaseSettings"));
+            services.Configure<DatabaseSettings>(Configuration.GetSection("DatabaseSettings"));
             services.AddSingleton<IDatabaseSettings>(sp =>
             {
                 return sp.GetRequiredService<IOptions<DatabaseSettings>>().Value;

@@ -19,6 +19,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{2BCFEB
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AkademiECommerce.Shared", "AkademiECommerce.Shared\AkademiECommerce.Shared.csproj", "{4CE22303-513D-434F-991F-3B4E5113110B}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "IdentityServer", "IdentityServer", "{A429B582-2536-4410-A7CB-BCCDE08CBD9C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ecommerce.IdentityServer", "IdentityServer\Ecommerce.IdentityServer\Ecommerce.IdentityServer.csproj", "{174D8499-6B6E-45AF-8A8C-23C85C426A9D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +37,10 @@ Global
 		{4CE22303-513D-434F-991F-3B4E5113110B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4CE22303-513D-434F-991F-3B4E5113110B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4CE22303-513D-434F-991F-3B4E5113110B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{174D8499-6B6E-45AF-8A8C-23C85C426A9D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{174D8499-6B6E-45AF-8A8C-23C85C426A9D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{174D8499-6B6E-45AF-8A8C-23C85C426A9D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{174D8499-6B6E-45AF-8A8C-23C85C426A9D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -41,6 +49,7 @@ Global
 		{E9B4DA09-342F-432C-BB2D-803702E765B2} = {1C060219-C54B-4B1C-9E87-1507C45904A5}
 		{D8FDA79B-AB14-4EFE-9780-E552A4294459} = {E9B4DA09-342F-432C-BB2D-803702E765B2}
 		{4CE22303-513D-434F-991F-3B4E5113110B} = {2BCFEB1E-E28D-4595-9BC5-B113FD45A279}
+		{174D8499-6B6E-45AF-8A8C-23C85C426A9D} = {A429B582-2536-4410-A7CB-BCCDE08CBD9C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A1B576E9-142F-46B6-B5BE-F3463B758332}
