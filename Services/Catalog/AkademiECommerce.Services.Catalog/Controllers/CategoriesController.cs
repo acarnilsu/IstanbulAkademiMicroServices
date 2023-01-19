@@ -1,12 +1,14 @@
 ﻿using AkademiECommerce.Services.Catalog.Dtos;
 using AkademiECommerce.Services.Catalog.Services;
 using AkademiECommerce.Shared.ControllerBases;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 
 namespace AkademiECommerce.Services.Catalog.Controllers
 {
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class CategoriesController : CustomBaseController
