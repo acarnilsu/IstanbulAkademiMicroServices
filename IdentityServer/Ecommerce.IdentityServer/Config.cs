@@ -17,7 +17,7 @@ namespace Ecommerce.IdentityServer
                 //   new ApiResource("resource_Discount"){Scopes={"Discount_FullPermision"}},
                 //     new ApiResource("resource_Order"){Scopes={"Order_FullPermision"}},
                 //        new ApiResource("resource_Payment"){Scopes={"Payment_FullPermision"}},
-                //            new ApiResource("resource_PhotoStock"){Scopes={"PhotoStock_FullPermision"}},
+                               new ApiResource("resource_PhotoStock"){Scopes={"PhotoStock_FullPermision"}},
                 //                new ApiResource("resource_Gateway"){Scopes={"Gateway_FullPermision"}},
                                     new ApiResource(IdentityServerConstants.LocalApi.ScopeName)
 
@@ -39,7 +39,7 @@ namespace Ecommerce.IdentityServer
                     //    new ApiScope("Discount_FullPermision", "İndirimApi için full erişim"),
                     //        new ApiScope("Order_FullPermision", "SiparişApi için full erişim"),
                     //            new ApiScope("Payment_FullPermision", "ÖdemeApi için full erişim"),
-                    //                new ApiScope("PhotoStock_FullPermision", "FotoğrafApi için full erişim"),
+                                      new ApiScope("PhotoStock_FullPermision", "FotoğrafApi için full erişim"),
                     //                    new ApiScope("Gateway_FullPermision", "GatewayApi için full erişim"),
                                             new ApiScope(IdentityServerConstants.LocalApi.ScopeName)
             };
@@ -56,7 +56,7 @@ namespace Ecommerce.IdentityServer
                     AllowedGrantTypes = GrantTypes.ClientCredentials,
                     ClientSecrets = { new Secret("secret".Sha256()) },
 
-                    AllowedScopes = { "Catalog_FullPermision", IdentityServerConstants.LocalApi.ScopeName }
+                    AllowedScopes = { "Catalog_FullPermision","PhotoStock_FullPermision", IdentityServerConstants.LocalApi.ScopeName }
                 },
 
                 // interactive client using code flow + pkce

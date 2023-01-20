@@ -1,6 +1,9 @@
+using AkademiECommerce.Services.Basket.Settings;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Authorization;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -25,8 +28,21 @@ namespace AkademiECommerce.Services.Basket
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
-            services.AddControllers();
+            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(ops =>
+            {
+                ops.Authority = Configuration["IdentityServerURL"];
+                ops.Audience = "resource_Basket";
+                ops.RequireHttpsMetadata = false;
+            });
+            services.AddControllers(opts =>
+            {
+                opts.Filters.Add(new AuthorizeFilter());
+            });
+            services.Configure<RedisSettings>(Configuration.GetSection("RedisSettings"));
+            //services.AddSingleton<IDatabaseSettings>(sp =>
+            //{
+            //    return sp.GetRequiredService<IOptions<RedisSettings>>().Value;
+            //});
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "AkademiECommerce.Services.Basket", Version = "v1" });
