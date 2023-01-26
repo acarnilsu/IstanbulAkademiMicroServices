@@ -5,12 +5,17 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Handlers\" />
-    <Folder Include="Commands\" />
-    <Folder Include="Dtos\" />
-    <Folder Include="Mapping\" />
     <Folder Include="Results\" />
-    <Folder Include="Queries\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.0" />
+    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\AkademiECommerce.Shared\AkademiECommerce.Shared.csproj" />
+    <ProjectReference Include="..\AkademiECommerce.Services.Order.Infrastructure\AkademiECommerce.Services.Order.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

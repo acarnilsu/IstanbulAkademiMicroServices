@@ -4,4 +4,8 @@
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\AkademiECommerce.Services.Order.Domain.Core\AkademiECommerce.Services.Order.Domain.Core.csproj" />
+  </ItemGroup>
+
 </Project>
