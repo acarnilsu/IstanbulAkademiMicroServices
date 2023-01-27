@@ -1,4 +1,5 @@
 ﻿using AkademiECommerce.Services.Order.Application.Dtos;
+using AkademiECommerce.Services.Order.Application.Mapping;
 using AkademiECommerce.Services.Order.Application.Queries;
 using AkademiECommerce.Services.Order.Infrastructure;
 using AkademiECommerce.Shared.Dtos;
@@ -17,17 +18,24 @@ namespace AkademiECommerce.Services.Order.Application.Handlers
     public class GetOrdersByUserIdQueryHandler : IRequestHandler<GetOrdersByUserIdQuery, ResponseDto<List<OrderDto>>>
     {
         private readonly OrderDbContext _orderDbContext;
-        private readonly IMapper _mapper;
-        public GetOrdersByUserIdQueryHandler(OrderDbContext orderDbContext, IMapper mapper)
+        
+        public GetOrdersByUserIdQueryHandler(OrderDbContext orderDbContext)
         {
             _orderDbContext = orderDbContext;
-            _mapper = mapper;
+            
         }
 
         public async Task<ResponseDto<List<OrderDto>>> Handle(GetOrdersByUserIdQuery request, CancellationToken cancellationToken)
         {
             var orders = await _orderDbContext.Orders.Include(x => x.OrderItems).Where(y => y.BuyerID == request.UserId).ToListAsync();
-            return ResponseDto<List<OrderDto>>.Success(_mapper.Map<List<OrderDto>>(orders),200);
+            if (!orders.Any())
+            {
+                return ResponseDto<List<OrderDto>>.Success(new List<OrderDto>(), 200);
+            }
+
+            var ordersDto = ObjectMapper.Mapper.Map<List<OrderDto>>(orders);
+
+            return ResponseDto<List<OrderDto>>.Success(ordersDto, 200);
         }
     }
 }

@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace AkademiECommerce.Services.Order.Controllers
+namespace AkademiECommerce.Services.FakePaymentt.Controllers
 {
     [ApiController]
     [Route("[controller]")]

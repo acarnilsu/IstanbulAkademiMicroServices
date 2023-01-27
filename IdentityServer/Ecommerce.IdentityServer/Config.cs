@@ -15,8 +15,8 @@ namespace Ecommerce.IdentityServer
             new ApiResource("resource_Catalog"){Scopes={"Catalog_FullPermision"}},
                    new ApiResource("resource_Basket"){Scopes={"Basket_FullPermision"}},
                       new ApiResource("resource_Discount"){Scopes={"Discount_FullPermision"}},
-                //     new ApiResource("resource_Order"){Scopes={"Order_FullPermision"}},
-                //        new ApiResource("resource_Payment"){Scopes={"Payment_FullPermision"}},
+                         new ApiResource("resource_Order"){Scopes={"Order_FullPermision"}},
+                            new ApiResource("resource_Payment"){Scopes={"Payment_FullPermision"}},
                                new ApiResource("resource_PhotoStock"){Scopes={"PhotoStock_FullPermision"}},
                 //                new ApiResource("resource_Gateway"){Scopes={"Gateway_FullPermision"}},
                                     new ApiResource(IdentityServerConstants.LocalApi.ScopeName)
@@ -37,8 +37,8 @@ namespace Ecommerce.IdentityServer
                 new ApiScope("Catalog_FullPermision","CatalogApi için full erişim"),
                     new ApiScope("Basket_FullPermision", "SepetApi için full erişim"),
                         new ApiScope("Discount_FullPermision", "İndirimApi için full erişim"),
-                    //        new ApiScope("Order_FullPermision", "SiparişApi için full erişim"),
-                    //            new ApiScope("Payment_FullPermision", "ÖdemeApi için full erişim"),
+                            new ApiScope("Order_FullPermision", "SiparişApi için full erişim"),
+                                new ApiScope("Payment_FullPermision", "ÖdemeApi için full erişim"),
                                       new ApiScope("PhotoStock_FullPermision", "FotoğrafApi için full erişim"),
                     //                    new ApiScope("Gateway_FullPermision", "GatewayApi için full erişim"),
                                             new ApiScope(IdentityServerConstants.LocalApi.ScopeName)
@@ -67,7 +67,7 @@ namespace Ecommerce.IdentityServer
                     ClientSecrets = { new Secret("secret".Sha256()) },
                     AllowOfflineAccess=true,
                     AllowedGrantTypes=GrantTypes.ResourceOwnerPassword,
-                    AllowedScopes = { "Catalog_FullPermision", "Basket_FullPermision", "Discount_FullPermision",IdentityServerConstants.StandardScopes.Email,IdentityServerConstants.StandardScopes.OpenId,IdentityServerConstants.StandardScopes.Profile,IdentityServerConstants.StandardScopes.OfflineAccess, IdentityServerConstants.LocalApi.ScopeName },
+                    AllowedScopes = { "Catalog_FullPermision", "Basket_FullPermision", "Discount_FullPermision", "Order_FullPermision", "Payment_FullPermision", IdentityServerConstants.StandardScopes.Email,IdentityServerConstants.StandardScopes.OpenId,IdentityServerConstants.StandardScopes.Profile,IdentityServerConstants.StandardScopes.OfflineAccess, IdentityServerConstants.LocalApi.ScopeName },
                     AccessTokenLifetime=300
 
                 },

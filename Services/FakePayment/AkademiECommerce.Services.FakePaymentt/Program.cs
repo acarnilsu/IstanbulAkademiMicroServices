@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace AkademiECommerce.Services.FakePayment
+namespace AkademiECommerce.Services.FakePaymentt
 {
     public class Program
     {

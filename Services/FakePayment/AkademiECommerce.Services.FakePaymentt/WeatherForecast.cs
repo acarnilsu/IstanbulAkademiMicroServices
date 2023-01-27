@@ -1,6 +1,6 @@
 using System;
 
-namespace AkademiECommerce.Services.FakePayment
+namespace AkademiECommerce.Services.FakePaymentt
 {
     public class WeatherForecast
     {
